@@ -1,0 +1,49 @@
+<!--
+develop a script that can determine if a customer has exceeded there credit limit
+
+account number
+balance at the begining of the month
+total of all items charged by this customer this month
+total of all credit applied to the customer account this month
+allowed credit limit
+
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Homework 3 Problem 7.12</title>
+        <script type ="text/javascript">
+
+            var accountNumber;
+            var beginningBalance;
+            var itemsCharged;
+            var creditCharged;
+            var creditLimit ;
+            var newBlance;
+
+
+            accountNumber = window.prompt("What is your account number");
+            beginningBalance = window.prompt("What is your balance at the beginning of the month");
+            itemsCharged = window.prompt("How much did you spend on purchaes this month?");
+            creditCharged = window.prompt("How much did you spend on your credit card this month");
+            creditLimit = window.prompt("What is your credit limit");
+
+
+            balance = parseInt(beginningBalance);
+            spent = parseInt(itemsCharged);
+            creditSpent = parseInt(creditCharged);
+            limitCC = parseInt(creditLimit);
+
+            newBalance = balance + spent - creditSpent;
+            document.writeln("<h1> New Balance: " + newBalance+"</h>");
+
+            if (newBalance > creditLimit)
+                document.writeln("<h1>Credit Limit Exceeded </h1>");
+
+
+        </script>
+        </head>
+    <body>
+    </body>
+    </html>

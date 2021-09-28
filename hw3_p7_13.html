@@ -1,0 +1,37 @@
+<!--
+a salesperson makes money via commision basis
+create a script that calculates that salespersons weekly earnings
+
+Algo: 200 base + 9% of gross sales
+
+example:
+
+    weeklyBase = 200
++   grossSales = 9% of 5000)
+_________________________________
+=   finalPay
+
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Homework 3 Problem 7.13</title>
+        <script type ="text/javascript">
+
+            var basePay = 200;
+            var grossSales;
+            var weeklyPay;
+
+            grossSales = window.prompt("What were your gross sales for the week");
+            salesEarned = parseInt(grossSales);
+
+            weeklyPay = grossSales * 0.09 + basePay;
+            document.writeln("<h1> Weekly pay:$" + weeklyPay+ "</h>");
+
+
+        </script>
+        </head>
+    <body>
+    </body>
+    </html>
