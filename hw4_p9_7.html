@@ -1,0 +1,45 @@
+<!--
+Write a script that use a form to get the radius of a circle rom the user, then,
+call the function circleArea to calculate the area of a circle and display the
+result in a paragraph on the page.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculating Circles Area</title>
+        <script type="text/javascript">
+
+        function start()
+        {
+            var button = document.getElementById("calculateButton");
+            button.addEventListener("click", displayArea, false);
+        }
+
+        function displayArea()
+        {
+            var inputField = document.getElementById("radiusField");
+            var radius = parseFloat( inputField.value );
+            var result = document.getElementById("result");
+            result.innerHTML = "Circles Area is" + calculateArea(area);
+        }
+
+        function calculateArea(area)
+        {
+            return Math.PI * Math.pow(radius, 2);
+        }
+
+        window.addEventListener("load", start, false);
+
+        </script>
+    </head>
+    <body>
+        <form action = "#">
+            <p><label>Radius:
+                <input id = "radiusField" type = "number"></label>
+                <input id = "calculateButton" type = "button" value = "Calculate"></p>
+        </form>
+        <p id = "result"></p>
+    </body>
+</html>
