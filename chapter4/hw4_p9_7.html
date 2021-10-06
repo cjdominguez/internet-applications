@@ -22,10 +22,10 @@ result in a paragraph on the page.
             var inputField = document.getElementById("radiusField");
             var radius = parseFloat( inputField.value );
             var result = document.getElementById("result");
-            result.innerHTML = "Circles Area is" + calculateArea(area);
+            result.innerHTML = "Circles Area is " + calculateArea(radius);
         }
 
-        function calculateArea(area)
+        function calculateArea(radius)
         {
             return Math.PI * Math.pow(radius, 2);
         }

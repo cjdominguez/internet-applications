@@ -18,3 +18,49 @@ Use these functions to write a script that enables the user to enter either a Fa
 or a Celsius temperature and displays the Celsius or Fahrenheit equivalent
 
 -->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Please input a Temperature if you want to convert F to C then enter in F otherwise in C</p>
+
+<input id="numb" type="number">
+
+<button type="button" onclick="celsusToFarenhite()">CelsusToFarenhite</button>
+
+<button type="button" onclick="farenhiteToCelsus()">FarenhiteToCelsus</button>
+
+<p id="demo"></p>
+
+<script>
+function farenhiteToCelsus() {
+    var x, text;
+
+    x = document.getElementById("numb").value;
+
+    if (isNaN(x)) {
+        text = "Input not valid";
+    } else {
+        text = ((9.0/5.0)*x)+32;
+    }
+    document.getElementById("demo").innerHTML = "Temperature conversion from farenhite To Celsus is " + text;
+}
+
+function celsusToFarenhite() {
+    var x, text;
+
+    x = document.getElementById("numb").value;
+
+    if (isNaN(x)) {
+        text = "Input not valid";
+    } else {
+        text = (5.0/9.0)*(x-32);
+    }
+    document.getElementById("demo").innerHTML = "Temperature conversion from Celsus To Farenhite is " + text;
+}
+</script>
+
+</body>
+</html>
