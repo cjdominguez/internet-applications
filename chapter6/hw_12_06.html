@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<a href="#" onClick="javascript:changeBGC('blue')">Click Blue</a>
+<a href="#" onClick="javascript:changeBGC('red')">Click Red</a>
+<a href="#" onClick="javascript:changeBGC('green')">Click Green</a>
+
+<br>
+
+<a onClick=document.getElementById('para').style.fontFamily='serif'> Make it Serif!!!</a>
+<a onClick=document.getElementById('para').style.fontFamily='sans-serif'> Make it SansSerif!!!</a>
+<br>
+
+<a href="#" onClick="javascript:changeFont('serif')">Click Serif</a>
+<a href="#" onClick="javascript:changeFont('sans-serif')">Click Sans Serif</a>
+<script language="JavaScript">
+
+function changeBGC(color){
+document.bgColor = color;
+}
+
+function changeFont(whichType){
+document.fontFamily = whichType;
+}
+
+</script>
+</body>
+</html>

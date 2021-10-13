@@ -1,29 +1,62 @@
-<--!
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Company Pay </title>
+	<script type="text/javascript">
+		var total = new Array(9);
 
-Use a one-dimensional array to solve the following problem:
-A company pays its salespeople on a commission basis.
-The salespeople receive $200 per week plus 9 percent of their gross sales for that week.
-For example, a salesperson who grosses $5000 in sales in a week receives $200 plus 9 percent of $5000,
-or a total of $650. Write a script (using an array of counters) that obtains the gross sales for each
-employee through an HTML5 form and determines how many of the salespeople earned salaries in each of the
-following ranges (assume that each salesperson’s salary is truncated to an integer amount):
+		function start()
+		{
+			for (var i = 0; i < total.length; ++i)
+				total[i] = 0;
+		}
 
-$200–299
+		function addInput()
+		{
+			var salary;
+			var x;
+			var sales = document.getElementById("sales");
 
-$300–399
+			salary = 200 + parseInt(sales.newInput.value) * 0.09;
+			x = Math.floor(salary/100);
 
-$400–499
+			if (salary < 0)
+				return;
+			else if (x > 9)
+				x = 10;
+			++ total [ x -2 ]
+			outputArray();
+		}
 
-$500–599
-
-$600–699
-
-$700–799
-
-$800–899
-
-$900–999
-
-$1000 and over
-
+		function outputArray()
+		{
+			var sales = document.getElementById("sales");
+			sales.output.value =
+			"Number of people who earned salaries " + "in the following ranges: \n" +
+			"$200–299  \t " + total[0] + "\n" +
+			"$300–399  \t " + total[1] + "\n" +
+			"$400–499  \t " + total[2] + "\n" +
+			"$500–599  \t " + total[3] + "\n" +
+			"$600–699  \t " + total[4] + "\n" +
+			"$700–799  \t " + total[5] + "\n" +
+			"$800–899  \t " + total[6] + "\n" +
+			"$900–999  \t " + total[7] + "\n" +
+			"$1000 and over  \t " + total[8];
 -->
+		}
+	</script>
+	</head>
+
+
+	<body onload = "start()">
+		<form id = "sales" action="">
+			<h4>Enter Sales Amount:</h4>
+			<input type="text" name="newInput" />
+			<input type="button" value = "Submit" onclick = "addInput()" /> <br/>
+			<textarea name = "output" rows = "10" cols="70">
+			</textarea>
+		</form>
+	</body>
+
+
+</html>

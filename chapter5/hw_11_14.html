@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>String counter </title>
+<script type="text/javascript">
+function searchKey()
+{
+   var userInput = document.getElementById("userInput").value;;
+   var alphabets = new Array ("a", "b", "c" , "d", "e", "f", "g" , "h" , "i", "j", "k" , "l" , "m", "n" , "o" , "p" , "q", "r", "s", "t" , "u", "v", "w" , "x", "y" , "z");
+   var userInputLowerCase=userInput.toLowerCase();
+   var len=userInputLowerCase.length;
+   document.getElementById("result").value="" ;
+
+   for(i=0;i<26;i++)
+   {
+       var occurrences=0;
+       var searchKey=userInputLowerCase.indexOf(alphabets[i]);
+
+       for(j=0;j<len;j++)
+       {
+           if(parseInt(searchKey)!= -1)
+           {
+               occurrences++;
+               var searchKey=userInputLowerCase.indexOf(alphabets[i],parseInt(searchKey)+1);
+           }
+       }
+       if(occurrences!=0)
+       {
+           document.getElementById("result").value= document.getElementById("result").value + "\n" + alphabets[i] + " Occurs " + occurrences + " times";
+       }
+   }
+}
+</script>
+</head>
+<body>
+   <form action="#" method="post" name="myFormTest" id="myFormTest" class="form_class" >
+   <h2>How many letters are there? </h2>
+   <label>Enter input :</label>
+   <input type="text" name="userInput" id="userInput" placeholder="userInput" />
+   <br/><br/>
+   <input type="button" name="submit_name" id="btn_name" value="SUBMIT" onclick="searchKey()"/>
+   </form>
+   <h3>RESULT: </h3>
+   <br/>
+   <textarea rows="20" cols="50" name="result" id="result">
+   </textarea>
+</body>
+</html>

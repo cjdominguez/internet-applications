@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <script language="JavaScript">
+            function countInstances(string, word){
+                var substrings = string.split(word);
+                return substrings.length - 1;
+            }
+            </script>
+        </head>
+        <body>
+            <form>
+                <input type="text" name="string" value="insert string here">
+                <br>
+                <input type="text" name="word" value="insert char here">
+                <br>
+                <input type="button" value="count instances" onClick="alert(countInstances(this.form.string.value, this.form.word.value))">
+            </form>
+        </body>
+    </html>
