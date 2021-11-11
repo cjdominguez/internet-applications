@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- fig. 14.7 -->
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Quadratic Curves</title>
+   <script type="text/javascript">
+function roundedRect(length, breadth,startX,startY){
+       var canvas = document.getElementById("drawRoundedRect");
+var context = canvas.getContext("2d")
+context.beginPath();
+context.moveTo(startX+10, startY);
+context.lineTo(startX+length-10, startY);
+context.quadraticCurveTo(startX+length, startY, startX+length, startY+10);
+context.lineTo(startX+length, startY+breadth-10);
+context.quadraticCurveTo(startX+length, startY+breadth, startX+length-10, startY+breadth);
+context.lineTo(startX+10, startY+breadth);
+context.quadraticCurveTo(startX, startY+breadth, startX, startY+breadth-10);
+context.lineTo(startX, startY+10);
+context.quadraticCurveTo(startX, startY, startX+10, startY);
+context.closePath();
+context.fillStyle = "yellow";
+context.fill();
+context.strokeStyle = "royalblue";
+context.lineWidth = 6;
+context.stroke();
+       }
+
+</script>
+</head>
+<body>
+<canvas id = "drawRoundedRect" width = "130" height = "130"
+style = "border; 1px solid black;">
+</canvas>
+<script type="text/javascript">
+roundedRect(50,50,5,5);
+       roundedRect(50,20,60,60);
+</script>
+</body>
+</html>
